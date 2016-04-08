@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.jactoc.ewallet.TutorialActivity"
+    android:background="@color/sand_yellow">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_intro"
+        android:id="@+id/textIntro"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/enterPassword"
+        android:layout_below="@+id/textIntro"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:backgroundTint="@color/black"
+        android:editable="true"
+        android:enabled="true"
+        android:gravity="center"
+        android:hint="Choose a password"
+        android:maxLength="10" />
+
+
+    <!-- Icon action -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="no spaces, no symbols"
+        android:layout_below="@+id/enterPassword"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
+        android:textStyle="italic" />
+
+    <com.jactoc.ewallet.util.AnimCheckBox
+        android:id="@+id/checkboxTutorial"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        app:stroke_width="3dp"
+        app:stroke_color="@color/colorPrimary"
+        app:circle_color="@color/sand_yellow"
+        android:visibility="visible"
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/enterPassword"
+        android:layout_alignEnd="@+id/enterPassword" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remember password"
+        android:layout_toLeftOf="@id/checkboxTutorial"
+        android:layout_toStartOf="@id/checkboxTutorial"
+        android:layout_marginRight="10dp"
+        android:textColor="@color/black"
+        android:id="@+id/textView2"
+        android:layout_centerVertical="true" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="CONFIRM"
+        android:onClick="CONFIRM"
+        android:id="@+id/CONFIRM"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentEnd="false"
+        android:background="@color/gray"
+        android:textColor="@color/white"
+        android:padding="10dp"
+        android:textSize="20dp" />
+
+</RelativeLayout>

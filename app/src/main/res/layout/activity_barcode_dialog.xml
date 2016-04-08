@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    tools:context="com.jactoc.ewallet.CardDetailsActivity" >
+
+    <RelativeLayout
+        android:id="@+id/barcodeLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/round_layout_white"
+        android:layout_alignParentEnd="false">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/barcode"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/number"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="1234 1234 1234 1234"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/barcode"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/ccv"
+            android:gravity="left"
+            android:textSize="16sp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginRight="25dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

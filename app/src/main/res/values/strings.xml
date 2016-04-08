@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">My wallet</string>
+    <string name="name_manifest">EWallet</string>
+    <string name="add">Add Credit Card</string>
+    <string name="add2">Add Other Card</string>
+    <string name="settings">Settings</string>
+    <string name="text_intro">Welcome to your wallet!\n Set up a password to protect your data.</string>
+
+    <!-- LOGO DIALOG OPTION -->
+    <string-array name="logo_names">
+        <item>No Logo</item>
+        <item>Air Miles</item>
+        <item>American Eagle</item>
+        <item>Ikea</item>
+        <item>MEC</item>
+        <item>PC Plus</item>
+        <item>Scene</item>
+        <item>Scotia bank</item>
+        <item>Starbucks</item>
+        <item>Miles and more</item>
+    </string-array>
+
+    <string-array name="logo_colors">
+        <item>#FFFFFF</item>
+        <item>#FFFFFF</item>
+        <item>#001149</item>
+        <item>#003399</item>
+        <item>#0CA948</item>
+        <item>#FFFFFF</item>
+        <item>#000000</item>
+        <item>#ED1B2E</item>
+        <item>#FFFFFF</item>
+        <item>#FFFFFF</item>
+    </string-array>
+
+    <string-array name="logo_icons">
+        <item>null</item>
+        <item>@drawable/logo_airmiles</item>
+        <item>@drawable/logo_americaneagle</item>
+        <item>@drawable/logo_ikea</item>
+        <item>@drawable/logo_mec</item>
+        <item>@drawable/logo_pcplus</item>
+        <item>@drawable/logo_scene</item>
+        <item>@drawable/logo_scotiabank</item>
+        <item>@drawable/logo_starbucks</item>
+        <item>@drawable/logo_milesandmore</item>
+    </string-array>
+
+</resources>
