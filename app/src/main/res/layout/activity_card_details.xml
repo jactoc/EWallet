@@ -225,4 +225,16 @@
             android:textSize="20dp" />
     </LinearLayout>
 
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar"
+        android:layout_marginTop="50dp"
+        android:progress="50"
+        android:max="101"
+        android:layout_below="@+id/cardLayout"
+        android:layout_alignEnd="@+id/cardLayout"
+        android:layout_alignStart="@+id/cardLayout"
+        android:splitTrack="false" />
+
 </RelativeLayout>

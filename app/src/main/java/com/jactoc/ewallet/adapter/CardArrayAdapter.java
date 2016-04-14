@@ -68,35 +68,35 @@ public class CardArrayAdapter extends ArrayAdapter<CreditCard> {
         //background
         viewHolder.row_layout.invalidate();
         String color = cards.get(position).getColor();
-        if(color.equals("red")) {
+        if(color.contains("red")) {
             viewHolder.row_layout.setBackground(context.getDrawable(R.drawable.custom_shape_red));
             viewHolder.name.setTextColor(Color.BLACK);
             viewHolder.number.setTextColor(Color.BLACK);
-        } else if(color.equals("blue")) {
+        } else if(color.contains("blue")) {
             viewHolder.row_layout.setBackground(context.getDrawable(R.drawable.custom_shape_blue));
             viewHolder.name.setTextColor(Color.WHITE);
             viewHolder.number.setTextColor(Color.WHITE);
-        } else if(color.equals("yellow")) {
+        } else if(color.contains("yellow")) {
             viewHolder.row_layout.setBackground(context.getDrawable(R.drawable.custom_shape_yellow));
             viewHolder.name.setTextColor(Color.BLACK);
             viewHolder.number.setTextColor(Color.BLACK);
-        } else if(color.equals("green")) {
+        } else if(color.contains("green")) {
             viewHolder.row_layout.setBackground(context.getDrawable(R.drawable.custom_shape_green));
             viewHolder.name.setTextColor(Color.WHITE);
             viewHolder.number.setTextColor(Color.WHITE);
-        } else if(color.equals("purple")) {
+        } else if(color.contains("purple")) {
             viewHolder.row_layout.setBackground(context.getDrawable(R.drawable.custom_shape_purple));
             viewHolder.name.setTextColor(Color.BLACK);
             viewHolder.number.setTextColor(Color.BLACK);
-        } else if(color.equals("orange")) {
+        } else if(color.contains("orange")) {
             viewHolder.row_layout.setBackground(context.getDrawable(R.drawable.custom_shape_orange));
             viewHolder.name.setTextColor(Color.BLACK);
             viewHolder.number.setTextColor(Color.BLACK);
-        } else if(color.equals("white")) {
+        } else if(color.contains("white")) {
             viewHolder.row_layout.setBackground(context.getDrawable(R.drawable.custom_shape_white));
             viewHolder.name.setTextColor(Color.BLACK);
             viewHolder.number.setTextColor(Color.BLACK);
-        } else if(color.equals("black")) {
+        } else if(color.contains("black")) {
             viewHolder.row_layout.setBackground(context.getDrawable(R.drawable.custom_shape_black));
             viewHolder.name.setTextColor(Color.WHITE);
             viewHolder.number.setTextColor(Color.WHITE);
@@ -107,31 +107,31 @@ public class CardArrayAdapter extends ArrayAdapter<CreditCard> {
         }
 
         //semi circle
-        if(position > 0) {
-            viewHolder.semi_circle.invalidate();
-            String colorPre = cards.get(position-1).getColor();
-            if(colorPre.equals("red")) {
-                viewHolder.semi_circle.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#ED1B2E")));
-            } else if(colorPre.equals("blue")) {
-                viewHolder.semi_circle.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#003399")));
-            } else if(colorPre.equals("yellow")) {
-                viewHolder.semi_circle.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#ffff00")));
-            } else if(colorPre.equals("green")) {
-                viewHolder.semi_circle.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#0CA948")));
-            } else if(colorPre.equals("purple")) {
-                viewHolder.semi_circle.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#0CA948")));
-            } else if(colorPre.equals("orange")) {
-                viewHolder.semi_circle.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#ff9800")));
-            } else if(colorPre.equals("white")) {
-                viewHolder.semi_circle.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FFFFFF")));
-            } else if(colorPre.equals("black")) {
-                viewHolder.semi_circle.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#000000")));
-            } else {
-                viewHolder.semi_circle.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#7B3F00")));
-            }
-        } else {
-            viewHolder.semi_circle.setVisibility(View.INVISIBLE);
-        }
+//        if(position > 0) {
+//            viewHolder.semi_circle.invalidate();
+//            String colorPre = cards.get(position-1).getColor();
+//            if(colorPre.contains("red")) {
+//                viewHolder.semi_circle.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#ED1B2E")));
+//            } else if(colorPre.contains("blue")) {
+//                viewHolder.semi_circle.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#003399")));
+//            } else if(colorPre.contains("yellow")) {
+//                viewHolder.semi_circle.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#ffff00")));
+//            } else if(colorPre.contains("green")) {
+//                viewHolder.semi_circle.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#0CA948")));
+//            } else if(colorPre.contains("purple")) {
+//                viewHolder.semi_circle.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#0CA948")));
+//            } else if(colorPre.contains("orange")) {
+//                viewHolder.semi_circle.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#ff9800")));
+//            } else if(colorPre.contains("white")) {
+//                viewHolder.semi_circle.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FFFFFF")));
+//            } else if(colorPre.contains("black")) {
+//                viewHolder.semi_circle.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#000000")));
+//            } else {
+//                viewHolder.semi_circle.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#7B3F00")));
+//            }
+//        } else {
+//            viewHolder.semi_circle.setVisibility(View.INVISIBLE);
+//        }
 
         if(cards.get(position).getPicture() != null){
             int idDraw = context.getResources().getIdentifier(cards.get(position).getPicture(), "drawable", context.getPackageName());
