@@ -43,15 +43,18 @@
         <activity
             android:name=".MainActivity" />
         <activity
-            android:name=".TutorialActivity" />
+            android:name=".TutorialActivity"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name=".CardDetailsActivity" />
+            android:name=".CardDetailsActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".CardDialogActivity"
             android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar"
             android:noHistory="true" />
         <activity
-            android:name=".SettingsActivity" />
+            android:name=".SettingsActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

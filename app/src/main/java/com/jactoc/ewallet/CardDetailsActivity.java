@@ -2,10 +2,12 @@ package com.jactoc.ewallet;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -252,6 +254,11 @@ public class CardDetailsActivity extends AppCompatActivity {
         querySource.insertCreditCard(toInsertInDB);
         Toast.makeText(this, "Card successfully saved!", Toast.LENGTH_SHORT).show();
         finish();
+    }
+    
+    @Override
+    public void onBackPressed() {
+        CANCEL(null);
     }
 
 
