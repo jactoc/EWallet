@@ -3,14 +3,17 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="5dip"
     android:layout_marginTop="5dip"
-    android:background="@null">
+    android:background="@color/colorPrimary">
 
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/row_layout"
         android:background="@drawable/custom_shape"
-        android:paddingTop="1dp">
+        android:paddingTop="1dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp">
         <ImageView
             android:id="@+id/row_image"
             android:layout_width="50dp"
@@ -30,7 +33,7 @@
             android:layout_marginLeft="5dp"
             android:layout_marginTop="15dp"
             android:layout_centerInParent="true"
-            android:padding="10dp">
+            android:padding="15dp">
 
             <TextView
                 android:id="@+id/row_name"
@@ -74,6 +77,7 @@
         android:layout_centerHorizontal="true"
         android:background="@drawable/round_shape"
         android:layout_marginTop="-35dp"
-        android:antialias="true" />
+        android:antialias="true"
+        android:visibility="gone" />
 
 </RelativeLayout>
