@@ -27,7 +27,7 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
         setTitle("Settings");
 
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         checkboxSettings = (AnimCheckBox) findViewById(R.id.checkboxSettings);
         checkboxSettings.setOnClickListener(new View.OnClickListener() {
