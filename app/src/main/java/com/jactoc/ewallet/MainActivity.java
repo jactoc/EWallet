@@ -6,19 +6,24 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
+import android.graphics.drawable.GradientDrawable;
+import android.hardware.SensorManager;
 import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutCompat;
+import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.OrientationEventListener;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -35,9 +40,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 
 import io.card.payment.CardIOActivity;
 import io.card.payment.CreditCard;
@@ -65,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
     //UI
     private static ImageView profilePicture;
     private TextView name, address, issued, expires, number;
-    private EditText editName, editAddress, editIssued, editExpires, editNumber;
+    private TextView editName, editAddress, editIssued, editExpires, editNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,14 +105,18 @@ public class MainActivity extends AppCompatActivity {
         expires = (TextView) findViewById(R.id.expires);
         number = (TextView) findViewById(R.id.number);
 
-        editName = (EditText) findViewById(R.id.editName);
-        editAddress = (EditText) findViewById(R.id.editAddress);
-        editIssued = (EditText) findViewById(R.id.editIssued);
-        editExpires = (EditText) findViewById(R.id.editExpires);
-        editNumber = (EditText) findViewById(R.id.editNumber);
+        editName = (TextView) findViewById(R.id.editName);
+        editAddress = (TextView) findViewById(R.id.editAddress);
+        editIssued = (TextView) findViewById(R.id.editIssued);
+        editExpires = (TextView) findViewById(R.id.editExpires);
+        editNumber = (TextView) findViewById(R.id.editNumber);
+
+        enableFunctions();
     }
 
     private void enableFunctions() {
+        tryToFill();
+
         name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -142,32 +149,90 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-
-        // Checks the orientation of the screen
-        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            enableFunctions();
+    private void tryToFill() {
+        if(basePreferences.getName() != null && !basePreferences.getName().isEmpty()) {
+            editName.setText(basePreferences.getName());
+        }
+        if(basePreferences.getAddress() != null && !basePreferences.getAddress().isEmpty()) {
+            editAddress.setText(basePreferences.getAddress());
+        }
+        if(basePreferences.getIssued() != null && !basePreferences.getIssued().isEmpty()) {
+            editIssued.setText(basePreferences.getIssued());
+        }
+        if(basePreferences.getExpires() != null && !basePreferences.getExpires().isEmpty()) {
+            editExpires.setText(basePreferences.getExpires());
+        }
+        if(basePreferences.getNumber() != null && !basePreferences.getNumber().isEmpty()) {
+            editNumber.setText(basePreferences.getNumber());
         }
     }
 
     private void fillField(int selection) {
         switch (selection) {
             case 0:
-
+                final EditText editText = new EditText(this);
+                new AlertDialog.Builder(this)
+                        .setCancelable(true)
+                        .setView(editText)
+                        .setMessage("Enter name: ")
+                        .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                            public void onClick(final DialogInterface dialog, int whichButton) {
+                                basePreferences.setName(editText.getText().toString());
+                                tryToFill();
+                            }
+                        }).show();
                 break;
             case 1:
-
+                final EditText editText1 = new EditText(this);
+                new AlertDialog.Builder(this)
+                        .setCancelable(true)
+                        .setView(editText1)
+                        .setMessage("Enter address: ")
+                        .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                            public void onClick(final DialogInterface dialog, int whichButton) {
+                                basePreferences.setAddress(editText1.getText().toString());
+                                tryToFill();
+                            }
+                        }).show();
                 break;
             case 2:
-
+                final EditText editText2 = new EditText(this);
+                new AlertDialog.Builder(this)
+                        .setCancelable(true)
+                        .setView(editText2)
+                        .setMessage("Enter issued: ")
+                        .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                            public void onClick(final DialogInterface dialog, int whichButton) {
+                                basePreferences.setIssued(editText2.getText().toString());
+                                tryToFill();
+                            }
+                        }).show();
                 break;
             case 3:
-
+                final EditText editText3 = new EditText(this);
+                new AlertDialog.Builder(this)
+                        .setCancelable(true)
+                        .setView(editText3)
+                        .setMessage("Enter expires: ")
+                        .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                            public void onClick(final DialogInterface dialog, int whichButton) {
+                                basePreferences.setExpires(editText3.getText().toString());
+                                tryToFill();
+                            }
+                        }).show();
                 break;
             case 4:
-
+                final EditText editText4 = new EditText(this);
+                new AlertDialog.Builder(this)
+                        .setCancelable(true)
+                        .setView(editText4)
+                        .setMessage("Enter ID: ")
+                        .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                            public void onClick(final DialogInterface dialog, int whichButton) {
+                                basePreferences.setNumber(editText4.getText().toString());
+                                tryToFill();
+                            }
+                        }).show();
                 break;
         }
     }

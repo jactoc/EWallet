@@ -5,6 +5,137 @@
     android:layout_height="match_parent"
     tools:context="com.jactoc.ewallet.MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:id="@+id/ID"
+        android:orientation="horizontal"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/round_layout_white"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="45dp"
+        android:layout_marginLeft="10dp"
+        android:visibility="gone">
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_weight="1.5"
+            android:layout_height="match_parent"
+            android:id="@+id/picture_layout">
+
+            <ImageView
+                android:id="@+id/picture"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:onClick="takePhoto"
+                android:src="@drawable/empty_user"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/text_layout"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name: "
+                android:id="@+id/name"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address: "
+                android:layout_below="@+id/name"
+                android:id="@+id/address"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Issued: "
+                android:layout_below="@+id/address"
+                android:id="@+id/issued"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expires: "
+                android:layout_below="@+id/issued"
+                android:id="@+id/expires"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID: "
+                android:layout_below="@+id/expires"
+                android:id="@+id/number"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/editName"
+                android:layout_alignTop="@+id/name"
+                android:layout_centerHorizontal="true"
+                android:layout_alignBottom="@+id/name"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/editAddress"
+                android:layout_alignTop="@+id/address"
+                android:layout_centerHorizontal="true"
+                android:layout_alignBottom="@+id/address"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/editIssued"
+                android:layout_alignTop="@+id/issued"
+                android:layout_centerHorizontal="true"
+                android:layout_alignBottom="@+id/issued"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/editExpires"
+                android:layout_alignTop="@+id/expires"
+                android:layout_centerHorizontal="true"
+                android:layout_alignBottom="@+id/expires"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/editNumber"
+                android:layout_alignTop="@+id/number"
+                android:layout_centerHorizontal="true"
+                android:layout_alignBottom="@+id/number"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
     <ListView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"

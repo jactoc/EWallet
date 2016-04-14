@@ -22,6 +22,13 @@ public class BasePreferences {
         editor.remove(Constant.IS_DATABASE_VERSION_UPDATED);
         editor.remove(Constant.PASSWORD);
         editor.remove(Constant.REMEMBER_PASSWORD);
+
+        editor.remove(Constant.NAME);
+        editor.remove(Constant.ADDRESS);
+        editor.remove(Constant.ISSUED);
+        editor.remove(Constant.EXPIRES);
+        editor.remove(Constant.NUMBER);
+
         editor.commit();
     }
 
@@ -55,6 +62,43 @@ public class BasePreferences {
     }
     public void setIsRememberPassword(boolean isRememberPassword) {
         editor.putBoolean(Constant.REMEMBER_PASSWORD, isRememberPassword);
+        editor.commit();
+    }
+
+    //ID CARD
+    public String getName() {
+        return preferences.getString(Constant.NAME, null);
+    }
+    public void setName(String name) {
+        editor.putString(Constant.NAME, name);
+        editor.commit();
+    }
+    public String getAddress() {
+        return preferences.getString(Constant.ADDRESS, null);
+    }
+    public void setAddress(String address) {
+        editor.putString(Constant.ADDRESS, address);
+        editor.commit();
+    }
+    public String getIssued() {
+        return preferences.getString(Constant.ISSUED, null);
+    }
+    public void setIssued(String issued) {
+        editor.putString(Constant.ISSUED, issued);
+        editor.commit();
+    }
+    public String getExpires() {
+        return preferences.getString(Constant.EXPIRES, null);
+    }
+    public void setExpires(String expires) {
+        editor.putString(Constant.EXPIRES, expires);
+        editor.commit();
+    }
+    public String getNumber() {
+        return preferences.getString(Constant.NUMBER, null);
+    }
+    public void setNumber(String number) {
+        editor.putString(Constant.NUMBER, number);
         editor.commit();
     }
 
